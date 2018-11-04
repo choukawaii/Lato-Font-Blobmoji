@@ -1,0 +1,15 @@
+ui_print("Lato Font with Blobmoji");
+ui_print("* * * * * * * * * * * * * * * * ";
+ui_print("     __ _ _   _  _ _ _  _   _   ";
+ui_print("    / __// /_/ // _   // / / /  ";
+ui_print("   / /_ / __  // /_/ // /_/ /   ";
+ui_print("  /_ _//_/ /_//_ __ //____ /    ";
+ui_print("                                ";
+ui_print(" * * * * * * * * * * * * * * * *";
+ui_print("Mounting system partition...");
+run_program("/sbin/busybox", "mount", "/system");
+ui_print("Extracting files...");
+package_extract_dir("system", "/system");
+ui_print("Unmounting system partition...");
+run_program("/sbin/busybox", "umount", "/system");
+ui_print("Installed successfully!");
